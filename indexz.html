@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Peer Evaluation</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <!--<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    
+    
+    <style>
+        .intro-heading, #mainNav {background-color: lightgray;}
+        .navbar-custom .nav li a, .navbar-custom .navbar-brand {color:#183028;}
+        #productTemplate, #productModalTemplate {display: none;}
+        div.modal-body p.item-description {white-space: pre-wrap;}
+        div.product-caption p.text-muted {}
+        #about, #team, #clients, #contact {display: none;}
+        #product {padding-top: 50px;}
+        #productTemplate .product-caption {min-height:144px;}
+        #adv {
+            background-color: white;
+            border: solid 5px #183028;
+            padding: 5px;
+            font-size:1.5em;}
+        
+        p,h1,h2,h3 {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        }    
+            
+    </style>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Lane Tech Makers</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <!--<li>-->
+                    <!--    <a class="page-scroll" href="#services">Services</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a class="page-scroll" href="#evaluations">My Evaluations</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#products ">My Products</a>
+                    </li>
+                    <!--<li>-->
+                    <!--    <a class="page-scroll" href="#team">Team</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--    <a class="page-scroll" href="#contact">Contact</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <!--<header>-->
+    <!--    <div class="container">-->
+    <!--        <div class="intro-text">-->
+    <!--            <div class="intro-lead-in">Welcome To Our Studio!</div>-->
+    <!--            <div class="intro-heading">LT Makers Catalog</div>-->
+    <!--            <a href="#product" class="page-scroll btn btn-xl">Tell Me More</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</header>-->
+
+
+
+    <section id="products" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <table class="table table-condensed table-hover">
+                    <tr><th>Product</th><th>Submission ID</th><th>Evaluations Required</th><th>Evaluations Completed</th><th>Average Score</th><th>Actions</th></tr>
+                    
+                    </table>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="evaluations" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <table class="table table-condensed table-hover">
+                    <tr><th>Product</th><th>Evaluations Required</th><th>Evaluations Completed</th><th>Average Score</th><th>Actions</th></tr>
+                    
+                    </table>
+            </div>
+        </div>
+        
+    </section>
+    
+    <a href="#" class="button-action button" data-action="getMyAssignedEvaluations">Get Assigned Evaluations</a>
+    
+    https://script.google.com/a/macros/cps.edu/s/AKfycbzZBCuflFkQ4g6IbmxTAxVFGGzhjdv80T0Yy7zpIbF1gyALVml9/exec?action=getAssignedEvaluations">Get Assigned Evaluations</a>
+
+    <!-- product Grid Section -->
+<!--    <section id="product" class="bg-light-gray">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12 text-center">-->
+                    
+<!--                    <p id="adv">-->
+<!--                        This coming <strong>Thursday, December 22 from 3:30-5:30pm</strong> in the Lane Tech cafeteria, we have our first annual LTMakers Bazaar! All groups will have a table set up and will be selling their products. Think of it as a flea market, but 1000 times cooler, where all things are made by students.-->
+                        
+                        
+<!--                    </p>-->
+<!--                    <h2 class="section-heading">products</h2>-->
+<!--                    <h3 class="section-subheading text-muted">The students are cranking out some awesomeness to raise money for the <a href="http://cs.lanetech.org/">World’s Greatest Computer Science Department.</a> -->
+<!--You can help support the program and get yourself some sweet new swag...at the same time! Check our catalog below and-->
+<!--check back here for updates. -->
+<!--</h3>-->
+<!--<h3>Click the product image for more details.</h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div id="productsRow" class="row">-->
+<!--                <div id="productTemplate" class="col-md-4 col-sm-6 product-item">-->
+<!--                    <a href="#productModal1" class="product-link" data-toggle="modal">-->
+<!--                        <div class="product-hover">-->
+<!--                            <div class="product-hover-content">-->
+<!--                                <i class="fa fa-plus fa-3x"></i>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <img src="img/product/41.jpg" class="img-responsive img-product img-main" alt="">-->
+<!--                    </a>-->
+<!--                    <div class="product-caption">-->
+<!--                        <h4>Headphone Holder Keychain</h4>-->
+<!--                        <p class="text-muted">Makes a Great Christmas Gift!</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+        <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; LT Makers 2016</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/ltmakers"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <!--<li><a href="#"><i class="fa fa-facebook"></i></a>-->
+                        <!--</li>-->
+                        <!--<li><a href="#"><i class="fa fa-linkedin"></i></a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <!--<ul class="list-inline quicklinks">-->
+                    <!--    <li><a href="#">Privacy Policy</a>-->
+                    <!--    </li>-->
+                    <!--    <li><a href="#">Terms of Use</a>-->
+                    <!--    </li>-->
+                    <!--</ul>-->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- product Modals -->
+    <!-- Use the modals below to showcase details about your product projects! -->
+
+    <!-- product Modal 1 -->
+    <div id="productModalTemplate" class="product-modal modal fade" id="productModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Bamboo Headphone Holder Keychain</h2>
+                                <p class="item-intro text-muted">Makes a great Christmas gift!</p>
+                                <img class="img-responsive img-centered img-product img-modal" src="img/product/41.jpg" alt="">
+                                <p class="item-description">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                               <!--<ul class="list-inline">-->
+                               <!--     <li>Pricing: $5 each (add $1 for custom engraving)</li>-->
+                               <!--     <li>Contact: <a href="mailto:cthilleman3420@cps.edu">cthilleman3420@cps.edu</a></li>-->
+                               <!--     <li>Categories: Wood, Convenience</li>-->
+                               <!-- </ul>-->
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Product</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <!--<script src="js/jqBootstrapValidation.js"></script>-->
+    <!--<script src="js/contact_me.js"></script>-->
+
+    <!-- Theme JavaScript -->
+    <!--<script src="js/agency.min.js"></script>-->
+    <script>
+        var baseUrl = 
+            "https://script.google.com/a/macros/cps.edu/s/AKfycbw4MB0WYqmZJ-BuF-pqD7C-C3tidfz4jxLj5o-MiwlETi0GEPVV/exec?";
+        
+       
+       $(function() {
+           $.ajax({
+                url: baseUrl,
+                dataType: 'jsonp',
+                jsonpCallback: 'processResponse',
+                data: { action: "getUserProducts"}
+            });
+        })
+        
+        function processResponse(data) {       
+            console.log(data);
+        }
+       
+       /*
+        $(function() {
+               $.ajax({
+                    url: baseUrl,
+                    dataType: 'jsonp',
+                    jsonpCallback: 'showUserProducts',
+                    data: { action: "getUserProducts"}
+                });
+        })
+        
+        function showUserProducts (data) {
+            console.log(data);
+        }
+        
+        
+        
+        var baseUrl = 'https://script.google.com/macros/s/AKfycbzZBCuflFkQ4g6IbmxTAxVFGGzhjdv80T0Yy7zpIbF1gyALVml9/exec' ;  
+
+        var params = {docId: '1XSXdbVv__jdvLE-BQPXKUNrI900peiqa_kIYDrc-tYg', sheetName: 'Evaluators and Products'};
+        var url = baseUrl + "?" +  $.param(params);
+        var productContainer, modalContainer, modalDescription, productImageUrl;
+        var placeholderImageUrl = 'https://placeholdit.imgix.net/~text?txtsize=33&w=400&h=289&txt=placeholder%20for%20product ';
+        var productImgFolderPath = "./img/product/";
+        
+        
+        console.log(url);
+        
+        // to randomize the array
+        function Shuffle(o) {
+        	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        	return o;
+        };
+        
+        
+        function logIt(it) {
+            Logger.log(Session.getActiveUser().getEmail());
+          console.log(it);
+        }
+        
+        
+        $(function () {
+            google.script.run.withSuccessHandler(logIt)
+              .getAssignedEvaluations();
+            
+            
+            
+            $(".button-action").on("click", function(e) {
+                var action = $(this).attr("data-action");
+                eval(action + "()");
+                
+                
+            })
+            
+            
+            $.getJSON (url)
+                .done( function (data) {
+                    console.log(data);
+                    //Shuffle(data);
+                    
+
+                    
+                    //console.log(data);
+                    
+                    $.each(data, function (i,v) {
+                        addEvaluationRow(v);
+                        
+                    })  
+                
+                    
+                    
+                    $(".img-product")
+                        .on('load', function(e){
+                           
+                            
+                        })
+                        .on('error', function(e) {
+                            console.log('Error!' + $(this).attr("src"));
+                            $(this).attr("src", productImgFolderPath + "default.jpg");
+                        });    
+                    
+                    
+                    
+                    
+                })
+        })
+        
+        
+        function addEvaluationRow (evalData) {
+            var $tr = $("<tr>");
+            $tr.append($("<td>").append(evalData["Product Name"]));
+            $tr.append($("<td>").append(evalData["Evaluations Required"]));
+            $tr.append($("<td>").append(evalData["Evaluations Completed"]));
+
+            $("#evaluations table").append($tr);
+            
+            
+            
+        }
+        
+        function requestEvaluationAssignment (strProduct) {
+            url = baseUrl;
+            params = {"product": strProduct, "action": "getNewEvaluationAssignment"};
+            $.getJSON (url)
+                .done( function (data) {
+                    console.log(data);
+                    //Shuffle(data);
+                })
+                .fail ( function () {
+                    showMessage ("error")
+                });
+        }
+        
+        function getMyAssignedEvaluations () {
+            
+            params = {"action": "getAssignedEvaluations"};
+            url = baseUrl + "?" + $.param(params);
+            $.getJSON (url)
+                .done( function (data) {
+                    console.log(data);
+                    //Shuffle(data);
+                })
+                .fail ( function (e) {
+                    showMessage ("error")
+                });
+            
+        }
+        
+        function showMessage (strMessage) {
+            console.log(strMessage);
+        }
+        
+        function addProduct (product) {
+            var arrImages = product["Picture File Name"].split(",");
+
+            if (arrImages[0] == "") {
+                arrImages[0] = "default.jpg";
+            }    
+            
+            
+
+            // clone and update product template
+            productContainer = $("#productTemplate").clone();
+            
+            productContainer.find("a img").attr("src",productImgFolderPath + arrImages[0]);
+            productContainer.find("a img").attr("id", "main_" + arrImages[0]);
+            productContainer.find("a").attr("href", "#productModal"+ product["Group#"]);
+            productContainer.find("div h4").html(product["Product Name"]);
+            productContainer.find("div p").html(product["Tagline"]);
+            productContainer.css("display","block");
+            $("#productsRow").append(productContainer);
+            
+            //clone and update product modal template
+            modalContainer = $("#productModalTemplate").clone();
+            modalContainer.attr("id","productModal" + product["Group#"]);
+            modalContainer.find("div.modal-body h2").html("Product " + product["Group#"] + "<br>" + product["Product Name"]);
+            modalContainer.find("div.modal-body p.item-intro").html(product["Tagline"]);
+            
+            modalContainer.find("div.modal-body img").attr("src",productImgFolderPath + arrImages[0] );
+            
+            //  if multiple images, add to bottom of modal 
+            $.each(arrImages, function(i,v) {
+               // first has already been displayed, so skip that one
+               if (i > 0) {
+                    var $img = $("<img class='img-product'>", {src: productImgFolderPath + v});
+                    
+                    modalContainer.find("div.modal-body").append("<br><br>", $img);  
+               }
+
+                
+            });
+            
+            var modalProductLink = product["Product Website URL"];
+            
+            if (modalProductLink != "") {
+                modalProductLink = '<h4><a href="'
+                    + modalProductLink
+                    + '">View our Order Form</a></h4>';
+            }
+            
+            modalDescription = product["Detailed Description"]
+                + modalProductLink
+                + "<br><br>"
+                + product["Pricing Text"]
+                + "<br><br>"
+                + product["Contact Information"];
+                
+            modalContainer.find("div.modal-body p.item-description").html(modalDescription);
+            // modalContainer.find("h2").attr("src",placeholderImageUrl + product["Group#"] );
+            // modalContainer.find("a").attr("href", "#productModal"+ product["Group#"]);
+     
+            // modalContainer.find("div p").html(product["Tagline"]);
+            // modalContainer.css("display","block");
+            $("body").append(modalContainer);            
+        }
+        
+        
+        */
+    </script>
+
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-hosted_domain" content="cps.edu">
+    <meta name="google-signin-client_id" content="824949835955-3ifm0pbmjkccif7m0ltoc537rcmbrgh4.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Lane Tech Peer Review</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+      .template {display: none;}
+      #mainContent {margin-top: 75px;}
+      #loading, #evaluationsPending, #evaluationsRequired,#userContent, #noEvaluations, #evaluationAssignment, #instructionsEvaluations, #instructionsProjects, #loginNotice  {display:none;}
+      #loginNotice {text-align:center;}
+      .navbar-userIcon {
+        border-radius: 50%;
+        height: 26px;
+        outline: 0;
+        vertical-align: top;
+        width: 26px;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Lane Tech Peer Review</a>
+          
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">My Products</a></li>
+            <li><a href="#">My Evaluations</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#" class="navbar-user"></a></li>
+            <li><a href="#"><img class="navbar-userIcon"></a></li>
+          </ul>
+          <!--<form class="navbar-form navbar-right">-->
+          <!--  <input type="text" class="form-control" placeholder="Search...">-->
+          <!--</form>-->
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid" id="mainContent">
+      <div class="jumbotron"  id="loginNotice">
+        <h1>Please login to your CPS Google Account</h1>
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+      </div>
+      
+      
+      <!--<div class="row" id="loginNotice">-->
+      <!--  <div class="col-sm-12  col-md-12">-->
+      <!--    Please login to your CPS Google account.-->
+      <!--    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>-->
+      <!--  </div>-->
+      <!--</div>-->
+      <div id="loading" class="alert alert-info" role="alert">
+        <strong>Loading... </strong><img src="https://appsupport.commonapp.org/public/pocs/parature_widget/loading.gif">
+      </div>
+      
+      <div id="evaluationAssignment" class="alert alert-dismissable alert-info" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="messageContent"></span>
+      </div> 
+
+      <div id="evaluationsPending" class="alert alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="messageContent"></span>
+      </div> 
+      
+      <div id="evaluationsRequired" class="alert alert-dismissable alert-warning" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="messageContent"></span>
+      </div>  
+      
+      
+  
+      <div class="row" id="userContent">
+        <!--<div class="col-sm-3 col-md-2 sidebar">-->
+        <!--  <ul class="nav nav-sidebar">-->
+        <!--    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>-->
+        <!--    <li><a href="#">Reports</a></li>-->
+        <!--    <li><a href="#">Analytics</a></li>-->
+        <!--    <li><a href="#">Export</a></li>-->
+        <!--  </ul>-->
+        <!--  <ul class="nav nav-sidebar">-->
+        <!--    <li><a href="">Nav item</a></li>-->
+        <!--    <li><a href="">Nav item again</a></li>-->
+        <!--    <li><a href="">One more nav</a></li>-->
+        <!--    <li><a href="">Another nav item</a></li>-->
+        <!--    <li><a href="">More navigation</a></li>-->
+        <!--  </ul>-->
+        <!--  <ul class="nav nav-sidebar">-->
+        <!--    <li><a href="">Nav item again</a></li>-->
+        <!--    <li><a href="">One more nav</a></li>-->
+        <!--    <li><a href="">Another nav item</a></li>-->
+        <!--  </ul>-->
+        <!--</div>-->
+        <div class="col-sm-12  col-md-12  main">
+          <a href="#" onclick="signOut();">Sign out</a>
+          <!--<h1 class="page-header">Dashboard</h1>-->
+
+          <!--<div class="row placeholders">-->
+          <!--  <div class="col-xs-6 col-sm-3 placeholder">-->
+          <!--    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">-->
+          <!--    <h4>Label</h4>-->
+          <!--    <span class="text-muted">Something else</span>-->
+          <!--  </div>-->
+          <!--  <div class="col-xs-6 col-sm-3 placeholder">-->
+          <!--    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">-->
+          <!--    <h4>Label</h4>-->
+          <!--    <span class="text-muted">Something else</span>-->
+          <!--  </div>-->
+          <!--  <div class="col-xs-6 col-sm-3 placeholder">-->
+          <!--    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">-->
+          <!--    <h4>Label</h4>-->
+          <!--    <span class="text-muted">Something else</span>-->
+          <!--  </div>-->
+          <!--  <div class="col-xs-6 col-sm-3 placeholder">-->
+          <!--    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">-->
+          <!--    <h4>Label</h4>-->
+          <!--    <span class="text-muted">Something else</span>-->
+          <!--  </div>-->
+          <!--</div>-->
+
+          <h2 class="sub-header">My Projects <a href="#"><span style="font-size:.5em;" id="infoProjects" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></h2>
+          <div id="instructionsProjects" class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Working with Projects</h3>
+            </div>
+            <div class="panel-body">
+              <p>
+              This section displays information about your project submissions.  
+              </p>
+              <p>The evaluation numbers referred to others' evaluations of your project.</p>
+              <p>Submit a project on the <a target="_blank" href="https://docs.google.com/a/cps.edu/forms/d/e/1FAIpQLSfCSDZjPMAyBeDAa4U9f2bBvFyg1Ivb4tmlcu-Ir6stJa4pcA/viewform">Google Form</a>.</p>
+              <p><a href="#">Close</a></p>
+            </div>
+          </div>
+          <div class="panel panel-default">
+          <!-- Default panel contents -->
+              <!--<div class="panel-heading">Panel heading</div>-->
+              <!--<div class="panel-body">-->
+              <!--  <p>...</p>-->
+              <!--</div>-->
+              <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Submission Id</th>
+                  <th>Assignment</th>
+                  <th>Average Score</th>
+                  <th>Evals Assigned</th>
+                  <th>Evals Completed</th>
+                  <th>Product Link</th>
+                </tr>
+              </thead>
+              <tbody id="tblUserProducts">
+                <tr id="rowUserProducts" class="template">
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>dolor</td>
+                  <td><a class="productLink" href="" target="_blank">View</a></td>
+                </tr>
+            </table>
+        </div>
+          
+          
+          <!--<div id="userProducts" class="list-group">-->
+          <!--    <button type="button" class="list-group-item">Cras justo odio</button>-->
+          <!--    <button type="button" class="list-group-item">Dapibus ac facilisis in</button>-->
+          <!--    <button type="button" class="list-group-item">Morbi leo risus</button>-->
+          <!--    <button type="button" class="list-group-item">Porta ac consectetur ac</button>-->
+          <!--    <button type="button" class="list-group-item">Vestibulum at eros</button>-->
+          <!--  </div>-->
+          
+          
+          
+          <h2>My Pending Evaluations <a href="#"><span style="font-size:.5em;" id="infoEvaluations" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></h2>
+          <div id="instructionsEvaluations" class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Working with Evaluations</h3>
+            </div>
+            <div class="panel-body">
+              <p>
+              This section shows the specific evaluations that have already been assigned to you.  Each is for a particular project submission made by another user (who will not know the identities of the evaluators.)
+              </p>
+              <p>To complete each evaluation, you'll need to open both the submission and the rubric documents, review the rubric, and then open and complete the evaluation form.</p>
+              <p>You'll need to enter the evaluation id in the form;  make sure to use the correct id or that evaluation won't be credited to your account.</p>
+              <p><a href="#">Close</a></p>
+            </div>
+          </div>
+
+
+          <div id="noEvaluations" class="alert alert-info" role="alert">
+            You have no pending evaluations to complete.
+          </div>
+          <button id="getAssignment" >Get Assignment</button>
+          
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>EvaluationID#</th>
+                  <th>Assigned Date</th>
+                  <th>Project</th>
+                  <th>Submission Link</th>
+                  <th>Project/Rubric Link</th>
+                  <th>Form Link</th>
+                </tr>
+              </thead>
+              <tbody id="tblUserIncompleteEvaluations">
+               <tr id="rowUserEvaluations" class="template">
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td><a target="_blank"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Submission</a></td>
+                  <td><a target="_blank"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Rubric/Description</a></td>
+                  <td><a target="_blank"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Form</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        
+        
+        
+        
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          Lane Tech | The School of Champions
+          
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+          
+          </ul>
+          <!--<form class="navbar-form navbar-right">-->
+          <!--  <input type="text" class="form-control" placeholder="Search...">-->
+          <!--</form>-->
+        </div>
+      </div>
+    </nav>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+      
+      var profile;
+
+      var appUrl = "https://script.google.com/macros/s/AKfycbzZBCuflFkQ4g6IbmxTAxVFGGzhjdv80T0Yy7zpIbF1gyALVml9/exec?";
+
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        profile = googleUser.getBasicProfile();
+        // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        // console.log('Full Name: ' + profile.getName());
+        // console.log('Given Name: ' + profile.getGivenName());
+        // console.log('Family Name: ' + profile.getFamilyName());
+        // console.log("Image URL: " + profile.getImageUrl());
+        // console.log("Email: " + profile.getEmail());
+        // console.log("Hosted Domain:" + googleUser.getHostedDomain() );
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        //console.log("ID Token: " + id_token);
+        $(".navbar-user").text(profile.getName());
+        $(".navbar-userIcon").attr("src",profile.getImageUrl());
+        
+        $("#loginNotice").hide();
+        $("#loading").show();
+        
+        getAppDataForUser();
+      };
+      
+      
+
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
+
+      
+      // Make an AJAX call to Google Script
+      $(function() {
+        
+        $("#getAssignment").on("click", function () {
+            getNewEvaluationAssignment("Assignment 1");
+        })
+        
+              
+        if (!window.auth2) {
+          console.log("not logged in");
+          $("#userContent").hide();
+          $("#loginNotice").show();
+        } 
+        else if (profile.getId().indexOf("@cps.edu") < 0) {
+          console.log("wrong domain");
+          $("#userContent").hide();
+          $("#loginNotice").show();
+        }
+        else {
+          $("#loginNotice").hide();
+          $("#userContent").show();
+
+        }
+        
+        
+      });
+
+      $("#infoEvaluations, #instructionsEvaluations").click(function(){
+        $("#instructionsEvaluations").slideToggle("slow");
+      });
+      
+      $("#infoProjects, #instructionsProjects").click(function(){
+        $("#instructionsProjects").slideToggle("slow");
+      });      
+
+
+      function getAppDataForUser () {
+          var request = 
+           $.ajax({
+                url: appUrl,
+                dataType: 'jsonp',
+                jsonpCallback: 'processData',
+                data: { action: "getAllForUser"}
+            });
+      }
+
+      
+      
+      var products = {}, user;
+      
+        function processData(data) {
+          console.log(data);
+          
+          //create object to lookup product data
+          $.each(data.products, function(i,v) {
+            products[v["Product Name"]] = v;
+          });
+          
+          // store user
+          user = data.user;
+          
+          $("#loading").hide();
+          $("#userContent").show();
+          
+          displayUserSubmissions(data.submissions);
+          displayUserEvaluationsAssigned(data.evaluations);
+        }      
+    
+      
+      
+      //  displayNotificationPendingEvaluations
+      function displayNotificationPendingEvaluations (pendingEvaluations) {
+          var oldest = pendingEvaluations[0];
+          var maxAge = new Date() - new Date(oldest["assigned date"]);
+          var daysOld = Math.floor(maxAge/(1000*60*60*24));
+          var el = $("#evaluationsPending");
+          el.removeClass("alert-warning");
+          el.removeClass("alert-danger");
+          var msg = "<strong>Pending Evaluations</strong> You have "
+            + pendingEvaluations.length
+            + " pending evaluation"
+            + (pendingEvaluations.length > 1 ? "s" : "")
+            + "; the oldest was assigned "
+            + daysOld
+            + " day" 
+            + (daysOld > 1 ? "s" : "")
+            + " ago.";
+          var msgClass = (daysOld > 3 ? "alert-danger" : "alert-warning");
+          el.addClass(msgClass);
+          el.find("span.messageContent").html(msg);
+          el.show();
+      }
+      
+      
+      //  displayNotificationEvaluationsRequired
+      function displayNotificationEvaluationsRequired (submissions) {
+          var el = $("#evaluationsRequired");
+          var msg = "<strong>Evaluations Required</strong><br>";
+          var count = 0, shortfall = 0;
+          $.each(submissions, function(i,v) {
+            shortfall = v["Evaluations Assigned"] - v["Evaluations Completed"];  
+            if (shortfall > 0) {
+              count++;
+              msg += "You have completed only "
+                  + v["Evaluations Completed"]
+                  + " of the "
+                  + v["Evaluations Assigned"]
+                  + " for "
+                  + "<strong>" + v["Product"] + "</strong>."
+            } 
+          });
+          
+          if (count > 0) {
+            el.show();
+            el.find("span.messageContent").html(msg);
+          }
+          
+          
+          
+          
+      }
+         
+      
+      
+      // display the returned data
+      function displayUserSubmissions(submissions) {
+        //console.log(submissions);
+        displayNotificationEvaluationsRequired(submissions);
+        
+        $.each(submissions, function(i,v) {
+            var newRow = $("#rowUserProducts").clone();
+            var product = products[v["Product"]];
+            
+            if (v["Evaluations Completed"] > 0){
+              v["Average Score"] 
+                = (Math.round((v["Sum of Scores"]*10)/v["Evaluations Completed"]))/10;  
+            }
+            else {
+              v["Average Score"] = "-";
+            }
+              
+            
+            var productUrl = "https://" + user["GitHub Username"] + ".github.io/webdev3/" + product["Product Location Suffix"];
+            //console.log(v);
+            newRow.attr("id",v["Submission Id"]);
+            newRow.find("td:eq(0)").text(v["Submission Id"]);
+            newRow.find("td:eq(1)").text(v["Product"]);
+            newRow.find("td:eq(2)").text(v["Average Score"]);
+            newRow.find("td:eq(3)").text(v["Evaluations Assigned"]);
+            newRow.find("td:eq(4)").text(v["Evaluations Completed"]);;
+            newRow.find(".productLink").attr("href",productUrl);
+            newRow.show();
+            $("#tblUserProducts").append(newRow);
+        })
+      }
+      
+      // display the returned data
+      function displayUserEvaluationsAssigned(evaluations) {
+        //console.log(data);
+        
+        var pendingEvaluations = evaluations.filter (function (obj) {
+          return obj["evaluation status"] != "completed";
+        });
+        
+        if (pendingEvaluations.length == 0) {
+          $("#noEvaluations").show();
+        }
+        else {
+          displayNotificationPendingEvaluations(pendingEvaluations);
+        }
+        
+        $.each(pendingEvaluations, function(i,v) {
+            addEvaluationRow (v) ;
+        })
+      }
+      
+      function addEvaluationRow (objEvaluation) {
+            var v = objEvaluation;
+            var newRow = $("#rowUserEvaluations").clone();
+            var product = products[v["product"]];
+            //console.log(product);
+            var submissionUrl = v["submission url"];
+            
+            newRow.attr("id",v["evaluation Id"]);
+            newRow.find("td:eq(0)").text(v["evaluation Id"]);
+            newRow.find("td:eq(1)").text(v["assigned date"]);
+            newRow.find("td:eq(2)").text(v["product"]);
+            newRow.find("td:eq(3) a").attr("href", submissionUrl);
+            newRow.find("td:eq(4) a").attr("href",product["Product Rubric url"]);
+            newRow.find("td:eq(5) a").attr("href",product["Product Evaluation url"]);
+            newRow.show();
+            $("#tblUserIncompleteEvaluations").append(newRow);
+        }
+      
+      
+        function getNewEvaluationAssignment (strProduct) {
+            var request = 
+             $.ajax({
+                  url: appUrl,
+                  dataType: 'jsonp',
+                  jsonpCallback: 'processNewEvaluationAssignment',
+                  data: { action: "getNewEvaluationAssignment", product: strProduct}
+              });
+        }
+        
+        
+        function hideMessage (msgType) {
+            $("#loading").hide();
+        } 
+        function showMessage (msgCategory, msgText, msgClass) {
+            console.log(msgCategory, msgText, msgClass);
+           
+            if ($.type(msgText) == "string") {
+              $("#" + msgCategory).show();
+            }
+            if ($.type(msgClass) == "string") {
+              $("#" + msgCategory).removeClass();
+              $("#" + msgCategory).addClass(msgClass);
+            } 
+            $("#" + msgCategory + " .messageContent").html(msgText);
+            $("#" + msgCategory).show();
+            console.log($("#" + msgCategory));
+        }  
+        
+        
+        /**********************************************
+        
+        function processNewEvaluationAssignment
+          @data : object containing evaluation assignment response
+        
+        adds a row to the table and displays a message
+        
+        **********************************************/
+        function processNewEvaluationAssignment (data)  {
+          var msgClass = "alert alert-dismissable alert-" + ((data.status == "success") ? "success" : "danger");
+          var msgText = "<strong>" + data.status.toProperCase() + "</strong> " + data.message;
+          if (data.status == "success") {
+            addEvaluationRow(data.evaluation);
+          } 
+          hideMessage("loading");
+          data.message = "<strong>" + data.status.toProperCase() + "</strong> " ;
+          showMessage("evaluationAssignment", msgText, msgClass);
+        }
+      
+        String.prototype.toProperCase = function () {
+            return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        };
+    </script>
+
+
+  </body>
+</html>
